@@ -10,12 +10,12 @@ import asyncio
 
 import os
 os.environ["GROQ_API_KEY"]=os.getenv("GROQ_API_KEY")
-
+os.environ["TAVILY_API_KEY"] = os.getenv("TAVILY_API_KEY")
 
 def get_response_from_ai_agent(query,allow_search):  
      
     tools=[TavilySearch(max_results=2)] if allow_search else []
-    model = ChatGroq(model="qwen-qwq-32b")
+    model = ChatGroq(model="meta-llama/llama-4-maverick-17b-128e-instruct")
     agent = create_react_agent(
         model,tools
     )

@@ -9,16 +9,13 @@ class RequestState(BaseModel):
     
 from fastapi import FastAPI
 from ai_agent import get_response_from_ai_agent
-ALLOWED_MODELS_NAME=[
-    "llama-3-70b-8192",
-    "mixtral-8x7b-32768"
-]
+
+import os
+allowed_url =os.getenv("ALLOWED_URL")
 
 app= FastAPI(title="LangGraph AI Agent")
 origins = [
-
-    "http://localhost",
-    "http://localhost:8081",
+   allowed_url
 ]
 
 app.add_middleware(
