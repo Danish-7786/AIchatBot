@@ -1,0 +1,12 @@
+langgraph
+langchain
+langsmith
+python-dotenv
+langchain-groq
+langchain-tavily
+langchain-openai
+langchain-community
+langchain-mcp-adapters
+mcp
+fastapi
+uvicorn
