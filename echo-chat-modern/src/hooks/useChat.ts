@@ -43,7 +43,7 @@ export const useChat = () => {
   const generateMockResponse = async (userMessage: string): Promise<any> => {
     // Simulate AI thinking time
     try {
-      const response = await axios.post("http://localhost:8000/chat",{"message":[userMessage],"allow_search":true})
+      const response = await axios.post(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/chat`,{"message":[userMessage],"allow_search":true})
       if(response != null){
         return response.data;
       }
